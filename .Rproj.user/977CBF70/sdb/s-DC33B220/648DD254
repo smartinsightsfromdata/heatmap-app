@@ -1,0 +1,16 @@
+{
+    "contents" : "library(biomaRt)\n\nmart <- useMart(\"ensembl\",\"dmelanogaster_gene_ensembl\")\n\natts <- c('ensembl_gene_id',\n          'external_gene_id',\n          'description',\n          'gene_biotype')\n\ngene2name <-  getBM(attributes=atts,\n                    mart=mart)\n\ngene2name$description <- sub(\"\\\\s\\\\[Source.+\",\"\",gene2name$description)\n\nsaveRDS(gene2name,\"gene2name.rds\")\n",
+    "created" : 1411769656211.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "465732839",
+    "id" : "648DD254",
+    "lastKnownWriteTime" : 1411769252,
+    "path" : "~/GDrive/GitLib/heatmap-app/data/prepData.R",
+    "project_path" : "data/prepData.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

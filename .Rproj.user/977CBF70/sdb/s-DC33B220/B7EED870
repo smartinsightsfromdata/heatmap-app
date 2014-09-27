@@ -1,0 +1,16 @@
+{
+    "contents" : "heatmap-app\n===========\n\nA Shiny App for Interactive Gene Expression HeatMap Visualisation\n\nThis is a small Shiny App to display an interactive clustering/heatmap of differential gene expression. It takes as\ndata a list of DGELRT objects created from the edgeR package. Each slot of the list is name after the experiment\n(the list names will show up at the bottom of the heatmap)\n\nThis is work in progress where hopefull I will be able to add table of genes from generated from the heatmap. The \ngoal would be to click on a dendrogram node and have the associated genes from that branch populating the tables, one \ntab per experiment.\n\nFork me and help us develop that tools!\n",
+    "created" : 1411769640151.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2089105259",
+    "id" : "B7EED870",
+    "lastKnownWriteTime" : 1411769252,
+    "path" : "~/GDrive/GitLib/heatmap-app/README.md",
+    "project_path" : "README.md",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "markdown"
+}

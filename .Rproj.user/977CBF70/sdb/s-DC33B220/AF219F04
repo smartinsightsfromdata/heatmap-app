@@ -1,0 +1,16 @@
+{
+    "contents" : "library(shiny)\nlibrary(shinyIncubator)\n\nsource(\"helper.R\")\n\nzlim <- max(round(abs(range(sapply(saved.data,function(x) x$table$logFC)))))\nsamples <- names(saved.data)\n\n## Define UI for application that draws a histogram\nshinyUI(fluidPage(\n    progressInit(),    \n    ## Application title\n    titlePanel(\"Differential Expression Interactive Heatmap\"),\n    \n    ## Sidebar with a slider input for the number of bins\n    sidebarLayout(\n        sidebarPanel(\n\n            ## Selection samples to show\n            checkboxGroupInput(\"samples\",\"Samples to show:\",samples,selected=samples),\n\n            ## Selecting a Fold Change cutoff\n            numericInput(\"FC\",\n                         \"Keep only genes with absolute fold change of:\",\n                         value=2,\n                         min = 0,\n                         max = Inf,\n                         step=0.5),\n\n            ## Selecting a p-value cutoff\n            numericInput(\"pval\",\n                         \"Keep only genes with a p value lower then\",\n                         0.01,\n                         min = 0,\n                         max = 1,\n                         step = 0.01),\n\n            ## Selecting the heat map contrast\n            hr(),\n            h5(\"Ajusting the contrast (in log2 space)\"),\n\n            sliderInput(\"zlim.low\",\n                        \"Maximum Blue Caped At:\",\n                        min = -zlim,\n                        max = 0,\n                        value = -zlim,,\n                        step=0.5\n                        ),\n            \n            sliderInput(\"zlim.high\",\n                        \"Maximum Yellow Caped At:\",\n                        min = 0,\n                        max = zlim,\n                        value = zlim,\n                        step=0.5\n                        ),\n\n            uiOutput(\"heightSelector\"),\n            uiOutput(\"message\")\n            \n            ),\n        \n        ## Show a heatmap\n        mainPanel(\n            textOutput(\"mainText\"),\n            uiOutput(\"plotUI\")\n            )\n        )\n    ))\n\n",
+    "created" : 1411769471327.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3420936904",
+    "id" : "AF219F04",
+    "lastKnownWriteTime" : 1411769252,
+    "path" : "~/GDrive/GitLib/heatmap-app/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
